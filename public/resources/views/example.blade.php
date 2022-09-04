@@ -38,6 +38,29 @@
                 required
             />
 
+            <div class="inputHolder">
+                <x-form::label>Pick a item</x-form::label>
+
+                <x-form::radioButtons
+                    name="item_radio"
+                    :items="[
+                        (object) [
+                            'label' => 'Item 1',
+                            'value' => 'item_1'
+                        ],
+                        (object) [
+                            'label' => 'Item 2',
+                            'value' => 'item_2'
+                        ],
+                        (object) [
+                            'label' => 'Item 3',
+                            'value' => 'item_3'
+                        ],
+                    ]"
+                    required
+            />
+            </div>
+
             <x-form::select 
                 name="item"
                 placeholder="Pick item..."

@@ -32,7 +32,7 @@
 }
 
 .input:focus {
-    border-color: hotpink;
+    border-color: purple;
 }
 
 .input[type=date] {
@@ -63,7 +63,7 @@
 }
 
 .input[type=date]:focus + .input__dateIcon {
-    color: hotpink;
+    color: purple;
 }
 
 .textarea {
@@ -107,10 +107,34 @@
     display: block;
     flex-shrink: 0;
     border-radius: 0;
-    accent-color: hotpink;
+    accent-color: purple;
 }
 
 .checkbox__label {
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.radioButton {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.radioButton__input {
+    width: 2.2rem;
+    height: 2.2rem;
+    box-shadow: none;
+    display: block;
+    flex-shrink: 0;
+    accent-color: purple;
+}
+
+.radioButton__label {
     display: inline-block;
     margin-left: 1rem;
 }
