@@ -4,14 +4,12 @@
             name="example-form"
             action="https://jsonplaceholder.typicode.com/posts"
             @beforeSubmit="function () {
-                console.log('beforeSubmit');
                 formData.new_value = 'test';
             }"
             @success="function () {
                 console.log('success');
             }"
             @error="function (error) {
-                console.log('error');
                 console.log(error);
             }"
         >
