@@ -22,9 +22,14 @@
             <x-form::input 
                 name="email"
                 type="email"
-                placeholder="Enter your name..."
+                placeholder="Enter your email..."
                 x-model="formData.user_email"
                 required
+            />
+
+            <x-form::textarea 
+                name="message"
+                placeholder="Enter your message..."
             />
 
             <div>
