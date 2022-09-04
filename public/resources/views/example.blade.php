@@ -15,7 +15,19 @@
                 console.log(error);
             }"
         >
-            My form
+            <x-form::input 
+                name="user_name"
+                placeholder="Enter your name..."
+                required
+            />
+
+            <x-form::input 
+                name="email"
+                type="email"
+                placeholder="Enter your name..."
+                x-model="formData.user_email"
+                required
+            />
 
             <div>
                 <button
