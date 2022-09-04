@@ -2,13 +2,17 @@
     <div style="padding:10rem; width: 100rem; margin:auto; max-width:100%;">
         <x-form::base
             name="example-form"
-            action="/api/example-endoint"
+            action="https://jsonplaceholder.typicode.com/posts"
             @beforeSubmit="function () {
                 console.log('beforeSubmit');
                 formData.new_value = 'test';
             }"
-            @afterSubmit="function () {
-                console.log('afterSubmit');
+            @success="function () {
+                console.log('success');
+            }"
+            @error="function (error) {
+                console.log('error');
+                console.log(error);
             }"
         >
             My form

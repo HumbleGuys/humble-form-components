@@ -1,25 +1,53 @@
 const form = () => ({
-    formData: {
+    formData: {},
 
+    isLoading: false,
+
+    async handleSubmit () {
+        if (this.isLoading) {
+            return;
+        }
+
+        this.isLoading = true;
+
+        try {
+            await this.submit();
+        } catch (error) {
+            this.handleError(error);
+        } finally {
+            this.isLoading = false;
+        }
     },
 
-    init () {
-        console.log('form')
-    },
+    async submit() {
+        this.$dispatch('beforesubmit');
 
-    handleSubmit () {
         const url = this.$el.action;
         const method = this.$el.method;
 
         this.formData.submitted_from = window.location.href;
 
-        this.$dispatch('beforesubmit');
+        await fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(this.formData),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
 
-        console.log(this.formData);
+            this.$dispatch('success', data);
+        })
+        .catch((error) => {
+            this.handleError(error);
+        });
+    },
 
-        console.log(method, url);
-
-        this.$dispatch('aftersubmit');
+    handleError (error) {
+        this.$dispatch('error', error);
+        console.log(error);
     }
 });
 

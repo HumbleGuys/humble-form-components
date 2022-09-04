@@ -1,7 +1,7 @@
 @props([
     'name',
     'action',
-    'method' => 'post'
+    'method' => 'POST'
 ])
 
 <form
