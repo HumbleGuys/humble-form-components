@@ -27,6 +27,13 @@
                 required
             />
 
+            <x-form::input 
+                name="date"
+                type="date"
+                placeholder="Enter date..."
+                required
+            />
+
             <x-form::select 
                 name="item"
                 placeholder="Pick item..."
