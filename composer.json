@@ -1,0 +1,35 @@
+{
+    "name": "humble-guys/humble-form-components",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "HumbleFormComponents\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kim Larsson",
+            "email": "kim@humbleguys.se"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "humble-guys/humble-core": "0.0.*"
+    },
+    "require-dev": {
+        "laravel/pint": "^0.2.3"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "humbleCore": {
+            "providers": [
+                "HumbleFormComponents\\ServiceProvider"
+            ]
+        }
+    }
+}
