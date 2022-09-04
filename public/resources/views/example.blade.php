@@ -13,6 +13,10 @@
                 console.log(error);
             }"
         >
+            <x-form::label for="user_name">
+                Name
+            </x-form::label>
+
             <x-form::input 
                 name="user_name"
                 placeholder="Enter your name..."
