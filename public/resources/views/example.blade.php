@@ -27,6 +27,63 @@
                 required
             />
 
+            <x-form::select 
+                name="item"
+                placeholder="Pick item..."
+                :items="[
+                    (object) [
+                        'label' => 'Item 1',
+                        'value' => 'item_1'
+                    ],
+                    (object) [
+                        'label' => 'Item 2',
+                        'value' => 'item_2'
+                    ],
+                    (object) [
+                        'label' => 'Item 3',
+                        'value' => 'item_3'
+                    ],
+                ]"
+            />
+
+            <x-form::select 
+                name="product"
+                placeholder="Pick product..."
+                :items="[
+                    [
+                        'label' => 'Product 1',
+                        'value' => 'product_1'
+                    ],
+                    [
+                        'label' => 'Product 2',
+                        'value' => 'product_2'
+                    ],
+                    [
+                        'label' => 'Product 3',
+                        'value' => 'product_3'
+                    ],
+                ]"
+                required
+            />
+
+            <x-form::select 
+                name="color"
+                placeholder="Pick color..."
+                option-label="name"
+                option-value="name"
+                :items="[
+                    (object) [
+                        'name' => 'Blue',
+                    ],
+                    (object) [
+                        'name' => 'Purple',
+                    ],
+                    (object) [
+                        'name' => 'Red',
+                    ],
+                ]"
+            />
+
             <x-form::textarea 
                 name="message"
                 placeholder="Enter your message..."
