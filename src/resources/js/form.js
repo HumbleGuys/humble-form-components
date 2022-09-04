@@ -13,9 +13,13 @@ const form = () => ({
 
         this.formData.submitted_from = window.location.href;
 
+        this.$dispatch('beforesubmit');
+
         console.log(this.formData);
 
         console.log(method, url);
+
+        this.$dispatch('aftersubmit');
     }
 });
 

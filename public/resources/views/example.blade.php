@@ -3,6 +3,13 @@
         <x-form::base
             name="example-form"
             action="/api/example-endoint"
+            @beforeSubmit="function () {
+                console.log('beforeSubmit');
+                formData.new_value = 'test';
+            }"
+            @afterSubmit="function () {
+                console.log('afterSubmit');
+            }"
         >
             My form
 
