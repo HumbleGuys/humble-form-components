@@ -100,6 +100,14 @@
                 placeholder="Enter your message..."
             />
 
+            <x-form::checkbox 
+                name="terms"
+                value="accepting_terms"
+                required
+            >
+                I agree to the terms of service
+            </x-form::checkbox>
+
             <div>
                 <button
                     type="submit"
