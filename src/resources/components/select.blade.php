@@ -6,11 +6,11 @@
     'optionValue' => 'value',
 ])
 
-<div class="inputHolder">
+<div class="form__elementHolder">
     <select
         id="{{ $name }}"
         name="{{ $name }}"
-        {{ $attributes->merge(['class' => 'input select']) }}
+        {{ $attributes->merge(['class' => 'select form__inputElement']) }}
         @if (!$attributes->has('x-model'))
             x-model="formData.{{ $name }}"
         @endif

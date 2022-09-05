@@ -5,14 +5,14 @@
 
 .select__chevron {
     position: absolute;
-    right: 2rem;
+    right: var(--inputPaddingX);
     top: 50%;
-    margin-top: -1.2rem;
-    width: 2.4rem;
-    height: 2.4rem;
+    margin-top: calc(var(--inputIconSize) * -0.5);
+    width: var(--inputIconSize);
+    height: var(--inputIconSize);
     pointer-events: none;
-    transition: 0.25s;
-    color: currentColor;
+    color: var(--inputIconColor);
+    transition: var(--inputTransition);
 }
 
 .select:active + .select__chevron {

@@ -1,4 +1,10 @@
 <x-layout>
+    <style>
+        .form__elementHolder {
+            margin-bottom: 2rem;
+        }
+    </style>
+
     <div style="padding:10rem; width: 100rem; margin:auto; max-width:100%;">
         <x-form::base
             name="example-form"
@@ -30,6 +36,17 @@
                 x-model="formData.user_email"
                 required
             />
+
+            <x-form::input 
+                name="email_icon"
+                type="email"
+                placeholder="Enter your email..."
+                required
+            >
+                <x-slot name="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input__icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </x-slot>
+            </x-form::input>
 
             <x-form::input 
                 name="date"

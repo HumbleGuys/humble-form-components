@@ -1,6 +1,44 @@
-.inputHolder {
-    position: relative;
-    margin-bottom: 2rem;
-    color: #222;
+.form {
+    --inputBorderWidth: 2px;
+    --inputBorderColor: currentColor;
+    --inputFocusBorderColor: purple;
+    --inputHeight: 6rem;
+    --inputPaddingX: 2rem;
+    --inputPaddingY: 0;
+    --inputColor: currentColor;
+    --inputPlaceholderColor: currentColor;
+    --inputFontSize: 16px;
+    --inputBackgroundColor: transparent;
+    --inputTransition: 0.25s;
+    --inputIconSize: 2.2rem;
+    --inputIconColor: currentColor;
+    --inputFocusIconColor: var(--inputFocusBorderColor);
 }
 
+.form__elementHolder {
+    position: relative;
+}
+
+.form__inputElement {
+    color: var(--inputColor);
+    display: block;
+    width: 100%;
+    padding: var(--inputPaddingY) var(--inputPaddingX);
+    box-shadow: none;
+    outline: 0;
+    border: var(--inputBorderWidth) solid var(--inputBorderColor);
+    background-color: var(--inputBackgroundColor);
+    height: var(--inputHeight);
+    position: relative;
+    transition: var(--inputTransition);
+    font-size: var(--inputFontSize);
+}
+
+.form__inputElement::placeholder {
+    color: var(--inputPlaceholderColor);
+    opacity: 1;
+}
+
+.form__inputElement:focus {
+    border-color: var(--inputFocusBorderColor);
+}

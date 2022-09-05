@@ -4,7 +4,7 @@
     'labelClass' => ''
 ])
 
-<div {{ $attributes->except(['x-model', 'required', 'disabled'])->merge(['class' => 'checkbox']) }}>
+<div {{ $attributes->except(['x-model', 'required', 'disabled'])->merge(['class' => 'checkbox form__elementHolder']) }}>
     <input 
         type="checkbox" 
         id="{{ $name }}"
