@@ -28,3 +28,8 @@
 .input:focus + .input__icon {
     color: var(--inputFocusIconColor);
 }
+
+
+.input[disabled] + .input__icon {
+    opacity: var(--inputDisabledOpacity);
+}

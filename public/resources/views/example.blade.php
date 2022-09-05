@@ -59,6 +59,14 @@
                 required
             />
 
+            <x-form::input
+                label="Date 2"
+                name="date_2"
+                type="date"
+                placeholder="Enter date..."
+                disabled
+            />
+
             <div class="inputHolder">
                 <x-form::radioButtons
                     label="Pick a item"
