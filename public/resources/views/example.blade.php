@@ -147,6 +147,18 @@
                 placeholder="Enter your message..."
             />
 
+            <x-form::textarea 
+                label="Message 2"
+                name="message_2"
+                placeholder="Enter your message..."
+                class="myTextarea"
+                inner-class="myTextarea__inner"
+                label-class="myTextarea__label"
+                input-class="myTextarea__input"
+                disabled
+                required
+            />
+
             <x-form::checkbox 
                 name="checkbox_disabled"
                 disabled

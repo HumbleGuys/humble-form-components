@@ -43,6 +43,10 @@
     line-height: normal;
 }
 
+.form__inputElement[disabled] {
+    opacity: 0.5;
+}
+
 .form__inputElement::placeholder {
     color: var(--inputPlaceholderColor);
     opacity: 1;
