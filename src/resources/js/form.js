@@ -36,8 +36,6 @@ const form = () => ({
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log('Success:', data);
-
             this.$dispatch('success', data);
         })
         .catch((error) => {
@@ -47,7 +45,6 @@ const form = () => ({
 
     handleError (error) {
         this.$dispatch('error', error);
-        console.log(error);
     }
 });
 
