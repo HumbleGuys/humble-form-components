@@ -1,7 +1,7 @@
 .radioButton {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: var(--radioMarginBottom);
 
     &:last-child {
         margin-bottom: 0;
@@ -9,15 +9,18 @@
 }
 
 .radioButton__input {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: var(--radioSize);
+    height: var(--radioSize);
     box-shadow: none;
     display: block;
     flex-shrink: 0;
-    accent-color: purple;
+    accent-color: var(--radioAccentColor);
 }
 
 .radioButton__label {
     display: inline-block;
-    margin-left: 1rem;
+    margin-left: var(--radioLabelMarginLeft);
+    font-size: var(--radioLabelFontSize);
+    font-weight: var(--radioLabelFontWeight);
+    color: var(--radioLabelColor);
 }

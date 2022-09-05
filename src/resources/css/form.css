@@ -23,6 +23,14 @@
     --labelFontSize: 1.6rem;
     --labelFontWeight: 400;
     --labelMarginBottom: 1rem;
+
+    --radioSize: 2.2rem;
+    --radioMarginBottom: 1rem;
+    --radioAccentColor: purple;
+    --radioLabelMarginLeft: 1rem;
+    --radioLabelFontSize: 1.6rem;
+    --radioLabelFontWeight: 400;
+    --radioLabelColor: currentColor;
 }
 
 .form__elementHolder {
