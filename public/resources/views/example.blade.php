@@ -140,6 +140,11 @@
                 label="Item"
                 name="product"
                 placeholder="Pick product..."
+                class="mySelect"
+                label-class="mySelect__label"
+                inner-class="mySelect__inner"
+                input-class="mySelect__input"
+                chevron-class="mySelect__chevron"
                 :items="[
                     [
                         'label' => 'Product 1',
