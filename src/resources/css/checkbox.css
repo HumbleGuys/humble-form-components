@@ -1,0 +1,21 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.checkbox__input {
+    outline: 0;
+    width: 2rem;
+    height: 2rem;
+    box-shadow: none;
+    display: block;
+    flex-shrink: 0;
+    border-radius: 0;
+    accent-color: purple;
+}
+
+.checkbox__label {
+    display: inline-block;
+    margin-left: 1rem;
+}

@@ -58,7 +58,7 @@
                         ],
                     ]"
                     required
-            />
+                />
             </div>
 
             <x-form::select 

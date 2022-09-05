@@ -1,0 +1,54 @@
+.input {
+    color: currentColor;
+    display: block;
+    width: 100%;
+    padding: 0 2rem;
+    box-shadow: none;
+    outline: 0;
+    border: 2px solid currentColor;
+    background-color: #fff;
+    height: 6rem;
+    position: relative;
+    transition: 0.25s;
+    font-size: 16px;
+}
+
+.input::placeholder {
+    color: currentColor;
+    opacity: 1;
+}
+
+.input:focus {
+    border-color: purple;
+}
+
+.input[type=date] {
+    appearance: none;
+}
+
+.input[type=date]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.input__dateIcon {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    margin-top: -1.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    pointer-events: none;
+    color: currentColor;
+    transition: 0.25s;
+}
+
+.input[type=date]:focus + .input__dateIcon {
+    color: purple;
+}

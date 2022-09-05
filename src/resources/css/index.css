@@ -1,1 +1,7 @@
 @import './form';
+@import './checkbox';
+@import './input';
+@import './label';
+@import './radioButtons';
+@import './select';
+@import './textarea';
