@@ -217,12 +217,12 @@
             </x-form::checkbox>
 
             <div>
-                <button
+                <x-form::submit
                     type="submit"
                     style="background-color: hotpink;color:#fff;padding:1rem 2rem;font-size:1.8rem;"
                 >
                     Submit
-                </button>
+                </x-form::submit>
             </div>
         </x-form::base>
     </div>
