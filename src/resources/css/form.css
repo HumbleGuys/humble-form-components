@@ -13,6 +13,9 @@
     --inputIconSize: 2.2rem;
     --inputIconColor: currentColor;
     --inputFocusIconColor: var(--inputFocusBorderColor);
+
+    --textareaPadding: 2.5rem var(--inputPaddingX);
+    --textareaHeight: 24rem;
 }
 
 .form__elementHolder {

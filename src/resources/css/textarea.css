@@ -1,5 +1,5 @@
 .textarea {
-    padding: 2rem;
-    height: 24rem;
+    padding: var(--textareaPadding);
+    height: var(--textareaHeight);
     resize: none;
 }
