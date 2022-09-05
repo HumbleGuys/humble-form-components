@@ -1,6 +1,7 @@
 .label {
-    margin-bottom: 1rem;
+    margin-bottom: var(--labelMarginBottom);
+    font-size: var(--labelFontSize);
+    font-weight: var(--labelFontWeight);
+    color: var(--labelColor);
     display: inline-block;
-    font-weight: 500;
-    color: #222;
 }

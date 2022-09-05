@@ -18,6 +18,11 @@
     --textareaPadding: 2.5rem var(--inputPaddingX);
     --textareaHeight: 24rem;
     --textareaLineHeight: 1.5;
+
+    --labelColor: currentColor;
+    --labelFontSize: 1.6rem;
+    --labelFontWeight: 400;
+    --labelMarginBottom: 1rem;
 }
 
 .form__elementHolder {
