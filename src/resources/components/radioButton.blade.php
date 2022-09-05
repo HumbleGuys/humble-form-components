@@ -1,7 +1,10 @@
 @props([
-    'name',
     'label',
     'value'
+])
+
+@aware([
+    'name'
 ])
 
 <div class="radioButton">

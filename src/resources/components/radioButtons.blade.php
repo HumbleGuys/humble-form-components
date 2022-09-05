@@ -10,11 +10,14 @@
     :legend="$label"
     class="radioButtons"    
 >
-    @foreach ($items as $item)
-        <x-form::radioButton 
-            :name="$name"
-            :label="is_array($item) ? $item[$optionLabel] : $item->{$optionLabel}"
-            :value="is_array($item) ? $item[$optionValue] : $item->{$optionValue}"
-        />
-    @endforeach
+    @if (!empty($items))
+        @foreach ($items as $item)
+            <x-form::radioButton
+                :label="is_array($item) ? $item[$optionLabel] : $item->{$optionLabel}"
+                :value="is_array($item) ? $item[$optionValue] : $item->{$optionValue}"
+            />
+        @endforeach
+    @else
+        {!! $slot !!}
+    @endif
 </x-form::fieldset>

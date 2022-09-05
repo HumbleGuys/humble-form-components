@@ -67,27 +67,45 @@
                 disabled
             />
 
-            <div class="inputHolder">
-                <x-form::radioButtons
-                    label="Pick a item"
-                    name="item_radio"
-                    :items="[
-                        (object) [
-                            'label' => 'Item 1',
-                            'value' => 'item_1'
-                        ],
-                        (object) [
-                            'label' => 'Item 2',
-                            'value' => 'item_2'
-                        ],
-                        (object) [
-                            'label' => 'Item 3',
-                            'value' => 'item_3'
-                        ],
-                    ]"
-                    required
+            <x-form::radioButtons
+                label="Pick a item"
+                name="item_radio"
+                :items="[
+                    (object) [
+                        'label' => 'Item 1',
+                        'value' => 'item_1'
+                    ],
+                    (object) [
+                        'label' => 'Item 2',
+                        'value' => 'item_2'
+                    ],
+                    (object) [
+                        'label' => 'Item 3',
+                        'value' => 'item_3'
+                    ],
+                ]"
+                required
+            />
+
+            <x-form::radioButtons 
+                label="Pick a color"
+                name="color_radio"
+            >
+                <x-form::radioButton 
+                    label="Red"
+                    value="red"
                 />
-            </div>
+
+                <x-form::radioButton 
+                    label="Purple"
+                    value="purple"
+                />
+
+                <x-form::radioButton 
+                    label="Blue"
+                    value="blue"
+                />
+            </x-form::radioButtons>
 
             <x-form::select 
                 label="Item"
