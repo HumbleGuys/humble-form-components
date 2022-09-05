@@ -17,3 +17,10 @@
 >
     {!! $slot !!}
 </form>
+
+@once
+    @push('head')
+        <link rel="stylesheet" href="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/assets/index.11d3527d.css') }}">
+        <script module defer src="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/assets/index.390e90d9.js') }}"></script>
+    @endpush   
+@endonce 
