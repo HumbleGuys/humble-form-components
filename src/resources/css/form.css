@@ -23,7 +23,7 @@
 
     --labelColor: currentColor;
     --labelFontSize: 1.6rem;
-    --labelFontWeight: 400;
+    --labelFontWeight: inherit;
     --labelMarginBottom: 1rem;
 
     --radioSize: 2.2rem;
@@ -31,14 +31,14 @@
     --radioAccentColor: var(--accentColor);
     --radioLabelMarginLeft: 1rem;
     --radioLabelFontSize: 1.6rem;
-    --radioLabelFontWeight: 400;
+    --radioLabelFontWeight: inherit;
     --radioLabelColor: currentColor;
 
     --checkboxSize: 2rem;
-    --checkboxAccentColor: var(--accentColor); 
+    --checkboxAccentColor: var(--accentColor);
     --checkboxLabelMarginLeft: 1rem;
     --checkboxLabelFontSize: 1.6rem;
-    --checkboxLabelFontWeight: 400;
+    --checkboxLabelFontWeight: inherit;
     --checkboxLabelColor: currentColor;
 
     --submitLoaderSize: 1.5em;
@@ -48,7 +48,7 @@
     position: relative;
 }
 
-.form__elemenInner {
+.form__elementInner {
     position: relative;
 }
 

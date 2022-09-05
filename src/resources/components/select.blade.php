@@ -21,7 +21,7 @@
         </x-form::label>
     @endif
 
-    <div class="form__elemenInner {{ $innerClass }}">
+    <div class="form__elementInner {{ $innerClass }}">
         <select
             id="{{ $name }}"
             name="{{ $name }}"

@@ -8,15 +8,15 @@
 
 <div {{ $attributes->except(['x-model', 'required', 'disabled', 'type', 'placeholder'])->merge(['class' => 'form__elementHolder']) }}>
     @if (!empty($label))
-        <x-form::label 
+        <x-form::label
             :for="$name"
-            :class="$labelClass"    
+            :class="$labelClass"
         >
             {{ $label }}
         </x-form::label>
     @endif
 
-    <div class="form__elemenInner {{ $innerClass }}">
+    <div class="form__elementInner {{ $innerClass }}">
         <input
             id="{{ $name }}"
             name="{{ $name }}"
