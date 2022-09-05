@@ -90,20 +90,28 @@
             <x-form::radioButtons 
                 label="Pick a color"
                 name="color_radio"
+                class="myRadios"
+                label-class="myRadios__label"
+                radio-class="myRadio"
+                radio-label-class="myRadio__label"
+                radio-input-class="myRadio__input"
             >
                 <x-form::radioButton 
                     label="Red"
                     value="red"
+                    required
                 />
 
                 <x-form::radioButton 
                     label="Purple"
                     value="purple"
+                    required
                 />
 
                 <x-form::radioButton 
                     label="Blue"
                     value="blue"
+                    disabled
                 />
             </x-form::radioButtons>
 

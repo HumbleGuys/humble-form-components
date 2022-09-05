@@ -12,6 +12,7 @@
     flex-shrink: 0;
     border-radius: 0;
     accent-color: var(--checkboxAccentColor);
+    margin: 0,
 }
 
 .checkbox__label {

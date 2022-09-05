@@ -15,6 +15,7 @@
     display: block;
     flex-shrink: 0;
     accent-color: var(--radioAccentColor);
+    margin: 0;
 }
 
 .radioButton__label {
