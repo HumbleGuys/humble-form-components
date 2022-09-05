@@ -9,6 +9,9 @@
         <x-form::base
             name="example-form"
             action="https://jsonplaceholder.typicode.com/posts"
+            :initial-data="[
+                'terms' => false
+            ]"
             @beforeSubmit="function () {
                 formData.new_value = 'test';
             }"

@@ -1,11 +1,14 @@
 @props([
     'name',
     'action',
-    'method' => 'POST'
+    'method' => 'POST',
+    'initialData' => []
 ])
 
 <form
-    x-data="form"
+    x-data="form({
+        initialData: {{ json_encode($initialData) }}
+    })"
     name="{{ $name }}"
     action="{{ $action }}"
     method="{{ $method }}"

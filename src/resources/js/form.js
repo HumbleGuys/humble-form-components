@@ -1,5 +1,5 @@
-const form = () => ({
-    formData: {},
+const form = ({ initialData = {} }) => ({
+    formData: {...initialData},
 
     isLoading: false,
 
@@ -37,6 +37,8 @@ const form = () => ({
         .then((response) => response.json())
         .then((data) => {
             this.$dispatch('success', data);
+
+            this.clearForm();
         })
         .catch((error) => {
             this.handleError(error);
@@ -45,6 +47,10 @@ const form = () => ({
 
     handleError (error) {
         this.$dispatch('error', error);
+    },
+
+    clearForm () {
+        this.formData = {...initialData};
     }
 });
 
