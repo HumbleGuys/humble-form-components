@@ -13,15 +13,13 @@
 }
 
 .submitButton__loader {
-    --buttonLoaderSize: 1.5em;
-
-    width: var(--buttonLoaderSize);
-    height: var(--buttonLoaderSize);
+    width: var(--submitLoaderSize);
+    height: var(--submitLoaderSize);
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: calc(-1 * var(--buttonLoaderSize) / 2);
-    margin-top: calc(-1 * var(--buttonLoaderSize) / 2);
+    margin-left: calc(-1 * var(--submitLoaderSize) / 2);
+    margin-top: calc(-1 * var(--submitLoaderSize) / 2);
     animation: spin 1.5s linear infinite;
     opacity: 0;
     z-index: 2;

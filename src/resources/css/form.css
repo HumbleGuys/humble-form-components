@@ -40,6 +40,8 @@
     --checkboxLabelFontSize: 1.6rem;
     --checkboxLabelFontWeight: 400;
     --checkboxLabelColor: currentColor;
+
+    --submitLoaderSize: 1.5em;
 }
 
 .form__elementHolder {
