@@ -123,8 +123,17 @@
             />
 
             <x-form::checkbox 
+                name="checkbox_disabled"
+                disabled
+            >
+                Test disabled
+            </x-form::checkbox>
+
+            <x-form::checkbox 
                 name="terms"
-                value="accepting_terms"
+                class="myTerms"
+                input-class="myTerms__input"
+                label-class="myTerms__label"
                 required
             >
                 I agree to the terms of service
