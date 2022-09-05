@@ -1,20 +1,27 @@
 @props([
     'name',
     'label' => null,
+    'innerClass' => '',
+    'inputClass' => '',
+    'labelClass' => ''
 ])
 
-<div class="form__elementHolder">
+<div {{ $attributes->merge(['class' => 'form__elementHolder']) }}>
     @if (!empty($label))
-        <x-form::label :for="$name">
+        <x-form::label 
+            :for="$name"
+            :class="$labelClass"    
+        >
             {{ $label }}
         </x-form::label>
     @endif
 
-    <div class="form__elemenInner">
+    <div class="form__elemenInner {{ $innerClass }}">
         <input
             id="{{ $name }}"
             name="{{ $name }}"
-            {{ $attributes->merge(['class' => 'input form__inputElement', 'type' => 'text']) }}
+            class="input form__inputElement {{ $inputClass }}"
+            {{ $attributes->only(['x-model', 'required', 'disabled', 'type', 'placeholder'])->merge(['type' => 'text']) }}
             @if (!$attributes->has('x-model'))
                 x-model="formData.{{ $name }}"
             @endif

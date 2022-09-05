@@ -23,6 +23,10 @@
                 label="Name"
                 name="user_name"
                 placeholder="Enter your name..."
+                class="myInput"
+                inner-class="myInput__inner"
+                label-class="myInput__label"
+                input-class="myInput__input"
                 required
             />
 
