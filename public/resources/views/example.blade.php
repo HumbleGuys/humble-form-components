@@ -85,6 +85,7 @@
                 label="Item"
                 name="item"
                 placeholder="Pick item..."
+                disabled
                 :items="[
                     (object) [
                         'label' => 'Item 1',

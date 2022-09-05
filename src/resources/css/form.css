@@ -13,6 +13,7 @@
     --inputIconSize: 2.2rem;
     --inputIconColor: currentColor;
     --inputFocusIconColor: var(--inputFocusBorderColor);
+    --inputDisabledOpacity: 0.5;
 
     --textareaPadding: 2.5rem var(--inputPaddingX);
     --textareaHeight: 24rem;
@@ -44,7 +45,7 @@
 }
 
 .form__inputElement[disabled] {
-    opacity: 0.5;
+    opacity: var(--inputDisabledOpacity);
 }
 
 .form__inputElement::placeholder {

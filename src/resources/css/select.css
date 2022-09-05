@@ -18,3 +18,11 @@
 .select:active + .select__chevron {
     transform: rotate(0.5turn);
 }
+
+.select[disabled] {
+    pointer-events: none;
+}
+
+.select[disabled] + .select__chevron {
+    opacity: var(--inputDisabledOpacity);
+}
