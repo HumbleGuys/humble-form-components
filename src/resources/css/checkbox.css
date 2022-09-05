@@ -5,16 +5,19 @@
 
 .checkbox__input {
     outline: 0;
-    width: 2rem;
-    height: 2rem;
+    width: var(--checkboxSize);
+    height: var(--checkboxSize);
     box-shadow: none;
     display: block;
     flex-shrink: 0;
     border-radius: 0;
-    accent-color: purple;
+    accent-color: var(--checkboxAccentColor);
 }
 
 .checkbox__label {
     display: inline-block;
-    margin-left: 1rem;
+    margin-left: var(--checkboxLabelMarginLeft);
+    font-size: var(--checkboxLabelFontSize);
+    font-weight: var(--checkboxLabelFontWeight);
+    color: var(--checkboxLabelColor);
 }

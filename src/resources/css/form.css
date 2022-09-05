@@ -31,6 +31,13 @@
     --radioLabelFontSize: 1.6rem;
     --radioLabelFontWeight: 400;
     --radioLabelColor: currentColor;
+
+    --checkboxSize: 2rem;
+    --checkboxAccentColor: purple; 
+    --checkboxLabelMarginLeft: 1rem;
+    --checkboxLabelFontSize: 1.6rem;
+    --checkboxLabelFontWeight: 400;
+    --checkboxLabelColor: currentColor;
 }
 
 .form__elementHolder {
