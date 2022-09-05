@@ -1,7 +1,9 @@
 .form {
+    --accentColor: purple;
+
     --inputBorderWidth: 2px;
     --inputBorderColor: currentColor;
-    --inputFocusBorderColor: purple;
+    --inputFocusBorderColor: var(--accentColor);
     --inputHeight: 6rem;
     --inputPaddingX: 2rem;
     --inputPaddingY: 0;
@@ -26,14 +28,14 @@
 
     --radioSize: 2.2rem;
     --radioMarginBottom: 1rem;
-    --radioAccentColor: purple;
+    --radioAccentColor: var(--accentColor);
     --radioLabelMarginLeft: 1rem;
     --radioLabelFontSize: 1.6rem;
     --radioLabelFontWeight: 400;
     --radioLabelColor: currentColor;
 
     --checkboxSize: 2rem;
-    --checkboxAccentColor: purple; 
+    --checkboxAccentColor: var(--accentColor); 
     --checkboxLabelMarginLeft: 1rem;
     --checkboxLabelFontSize: 1.6rem;
     --checkboxLabelFontWeight: 400;
