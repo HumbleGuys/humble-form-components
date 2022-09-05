@@ -39,9 +39,8 @@
             />
 
             <div class="inputHolder">
-                <x-form::label>Pick a item</x-form::label>
-
                 <x-form::radioButtons
+                    legend="Pick a item"
                     name="item_radio"
                     :items="[
                         (object) [
