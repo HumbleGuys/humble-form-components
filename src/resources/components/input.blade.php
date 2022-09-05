@@ -6,7 +6,7 @@
     'labelClass' => ''
 ])
 
-<div {{ $attributes->merge(['class' => 'form__elementHolder']) }}>
+<div {{ $attributes->except(['x-model', 'required', 'disabled', 'type', 'placeholder'])->merge(['class' => 'form__elementHolder']) }}>
     @if (!empty($label))
         <x-form::label 
             :for="$name"
