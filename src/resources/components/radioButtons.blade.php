@@ -1,13 +1,13 @@
 @props([
     'name',
     'items',
-    'legend' => null,
+    'label' => null,
     'optionLabel' => 'label',
     'optionValue' => 'value',
 ])
 
 <x-form::fieldset 
-    :legend="$legend"
+    :legend="$label"
     class="radioButtons"    
 >
     @foreach ($items as $item)

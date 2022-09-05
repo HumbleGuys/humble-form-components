@@ -19,17 +19,15 @@
                 console.log(error);
             }"
         >
-            <x-form::label for="user_name">
-                Name
-            </x-form::label>
-
             <x-form::input 
+                label="Name"
                 name="user_name"
                 placeholder="Enter your name..."
                 required
             />
 
             <x-form::input 
+                label="Email"
                 name="email"
                 type="email"
                 placeholder="Enter your email..."
@@ -38,6 +36,7 @@
             />
 
             <x-form::input 
+                label="Email icon"
                 name="email_icon"
                 type="email"
                 placeholder="Enter your email..."
@@ -48,7 +47,8 @@
                 </x-slot>
             </x-form::input>
 
-            <x-form::input 
+            <x-form::input
+                label="Date"
                 name="date"
                 type="date"
                 placeholder="Enter date..."
@@ -57,7 +57,7 @@
 
             <div class="inputHolder">
                 <x-form::radioButtons
-                    legend="Pick a item"
+                    label="Pick a item"
                     name="item_radio"
                     :items="[
                         (object) [
@@ -78,6 +78,7 @@
             </div>
 
             <x-form::select 
+                label="Item"
                 name="item"
                 placeholder="Pick item..."
                 :items="[
@@ -97,6 +98,7 @@
             />
 
             <x-form::select 
+                label="Item"
                 name="product"
                 placeholder="Pick product..."
                 :items="[
@@ -117,6 +119,7 @@
             />
 
             <x-form::select 
+                label="Color"
                 name="color"
                 placeholder="Pick color..."
                 option-label="name"
@@ -135,6 +138,7 @@
             />
 
             <x-form::textarea 
+                label="Message"
                 name="message"
                 placeholder="Enter your message..."
             />

@@ -2,4 +2,5 @@
     padding: var(--textareaPadding);
     height: var(--textareaHeight);
     resize: none;
+    line-height: var(--textareaLineHeight);
 }

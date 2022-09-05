@@ -16,9 +16,14 @@
 
     --textareaPadding: 2.5rem var(--inputPaddingX);
     --textareaHeight: 24rem;
+    --textareaLineHeight: 1.5;
 }
 
 .form__elementHolder {
+    position: relative;
+}
+
+.form__elemenInner {
     position: relative;
 }
 
@@ -35,6 +40,7 @@
     position: relative;
     transition: var(--inputTransition);
     font-size: var(--inputFontSize);
+    line-height: normal;
 }
 
 .form__inputElement::placeholder {
