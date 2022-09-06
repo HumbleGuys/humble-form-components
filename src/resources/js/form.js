@@ -34,6 +34,13 @@ const form = ({ initialData = {} }) => ({
             },
             body: JSON.stringify(this.formData),
         })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Error! status: ${response.status}`);
+            }
+
+            return response;
+        })
         .then((response) => response.json())
         .then((data) => {
             this.$dispatch('success', data);

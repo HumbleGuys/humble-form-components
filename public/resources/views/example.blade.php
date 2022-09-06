@@ -229,4 +229,35 @@
             </div>
         </x-form::base>
     </div>
+
+    <div style="padding:10rem; width: 100rem; margin:auto; max-width:100%;">
+        <x-form::base
+            name="example-form2"
+            action="https://jsonplaceholder.typicode.com/posts!!!"
+            @beforeSubmit="function () {
+                formData.new_value = 'test';
+            }"
+            @success="function () {
+                console.log('success');
+            }"
+            @error="function (error) {
+                console.log('error');
+            }"
+        >
+            <x-form::input 
+                label="Name"
+                name="user_name2"
+                placeholder="Enter your name..."
+                required
+            />
+            <div>
+                <x-form::submit
+                    type="submit"
+                    style="background-color: hotpink;color:#fff;padding:1rem 2rem;font-size:1.8rem;"
+                >
+                    Submit
+                </x-form::submit>
+            </div>
+        </x-form::base>
+    </div>
 </x-layout>
