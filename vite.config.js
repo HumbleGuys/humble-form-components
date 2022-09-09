@@ -8,6 +8,13 @@ export default defineConfig(({ command }) => {
         build: {
             manifest: true,
             outDir: 'public/resources/dist',
+            
+            lib: {
+                name: "humble-form-components",
+                entry: 'src/resources/index.js',
+                fileName: 'humble-form-components'
+            },
+
             rollupOptions: {
                 input: 'src/resources/index.js'
             }

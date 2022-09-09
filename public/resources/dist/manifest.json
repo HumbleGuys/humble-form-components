@@ -1,14 +1,11 @@
 {
   "src/resources/index.js": {
-    "file": "assets/index.c0282030.js",
+    "file": "humble-form-components.umd.js",
     "src": "src/resources/index.js",
-    "isEntry": true,
-    "css": [
-      "assets/index.11d3527d.css"
-    ]
+    "isEntry": true
   },
-  "src/resources/index.css": {
-    "file": "assets/index.11d3527d.css",
-    "src": "src/resources/index.css"
+  "style.css": {
+    "file": "style.css",
+    "src": "style.css"
   }
 }
