@@ -26,5 +26,9 @@
                 x-model="formData.{{ $name }}"
             @endif
         ></textarea>
+
+        @if (!empty($icon))
+            {!! $icon !!}
+        @endif
     </div>
 </div>
