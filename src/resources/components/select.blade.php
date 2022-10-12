@@ -22,6 +22,10 @@
     @endif
 
     <div class="form__elementInner {{ $innerClass }}">
+        @if (!empty($icon))
+            {!! $icon !!}
+        @endif
+
         <select
             id="{{ $name }}"
             name="{{ $name }}"
