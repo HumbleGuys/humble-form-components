@@ -1,9 +1,26 @@
 const form = ({ initialData = {} }) => ({
-    formData: {...initialData},
+    formData: { ...initialData },
 
     isLoading: false,
 
-    async handleSubmit () {
+    honeypot: {
+        startTime: Date.now(),
+    },
+
+    toFastSubmit() {
+        const millisecondsElepsaded = Math.round(
+            Date.now() - this.honeypot.startTime
+        );
+
+        return millisecondsElepsaded < 1000;
+    },
+
+    async handleSubmit() {
+        if (this.toFastSubmit()) {
+            window.location.href = "https://www.google.se/";
+            return;
+        }
+
         if (this.isLoading) {
             return;
         }
@@ -20,7 +37,7 @@ const form = ({ initialData = {} }) => ({
     },
 
     async submit() {
-        this.$dispatch('beforesubmit');
+        this.$dispatch("beforesubmit");
 
         const url = this.$el.action;
         const method = this.$el.method;
@@ -30,38 +47,37 @@ const form = ({ initialData = {} }) => ({
         await fetch(url, {
             method: method,
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(this.formData),
         })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Error! status: ${response.status}`);
-            }
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`Error! status: ${response.status}`);
+                }
 
-            return response;
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            this.$dispatch('success', data);
+                return response;
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                this.$dispatch("success", data);
 
-            this.clearForm();
-        })
-        .catch((error) => {
-            this.handleError(error);
-        });
+                this.clearForm();
+            })
+            .catch((error) => {
+                this.handleError(error);
+            });
     },
 
-    handleError (error) {
-        this.$dispatch('error', error);
+    handleError(error) {
+        this.$dispatch("error", error);
     },
 
-    clearForm () {
-        this.formData = {...initialData};
-    }
+    clearForm() {
+        this.formData = { ...initialData };
+    },
 });
 
-document.addEventListener('alpine:init', () => {
-    window.Alpine.data('form', form);
-})
-
+document.addEventListener("alpine:init", () => {
+    window.Alpine.data("form", form);
+});

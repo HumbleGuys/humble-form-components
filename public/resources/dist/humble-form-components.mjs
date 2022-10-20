@@ -1,7 +1,19 @@
-const a = ({ initialData: r = {} }) => ({
-  formData: { ...r },
+const e = ({ initialData: s = {} }) => ({
+  formData: { ...s },
   isLoading: !1,
+  honeypot: {
+    startTime: Date.now()
+  },
+  toFastSubmit() {
+    return Math.round(
+      Date.now() - this.honeypot.startTime
+    ) < 1e3;
+  },
   async handleSubmit() {
+    if (this.toFastSubmit()) {
+      window.location.href = "https://www.google.se/";
+      return;
+    }
     if (!this.isLoading) {
       this.isLoading = !0;
       try {
@@ -15,9 +27,9 @@ const a = ({ initialData: r = {} }) => ({
   },
   async submit() {
     this.$dispatch("beforesubmit");
-    const i = this.$el.action, s = this.$el.method;
+    const i = this.$el.action, o = this.$el.method;
     this.formData.submitted_from = window.location.href, await fetch(i, {
-      method: s,
+      method: o,
       headers: {
         "Content-Type": "application/json"
       },
@@ -36,9 +48,9 @@ const a = ({ initialData: r = {} }) => ({
     this.$dispatch("error", i);
   },
   clearForm() {
-    this.formData = { ...r };
+    this.formData = { ...s };
   }
 });
 document.addEventListener("alpine:init", () => {
-  window.Alpine.data("form", a);
+  window.Alpine.data("form", e);
 });

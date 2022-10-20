@@ -20,7 +20,7 @@
 
 @once
     @push('head')
-        <link rel="stylesheet" href="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/style.css?v=0.0.4') }}">
-        <script module defer src="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/humble-form-components.umd.js?v=0.0.4') }}"></script>
+        <link rel="stylesheet" href="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/style.css?v=0.0.5') }}">
+        <script module defer src="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/humble-form-components.umd.js?v=0.0.5') }}"></script>
     @endpush   
 @endonce 

@@ -244,6 +244,8 @@
                 console.log('error');
             }"
         >
+            <x-form::honeypot name="my_field" />
+
             <x-form::input 
                 label="Name"
                 name="user_name2"
