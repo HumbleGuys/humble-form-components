@@ -1,12 +1,9 @@
-const s = ({ recapatcha: o, initialData: i = {} }) => ({
-  recapatcha: o,
-  formData: { ...i },
+const s = ({ recaptcha: e, initialData: a = {} }) => ({
+  recaptcha: e,
+  formData: { ...a },
   isLoading: !1,
   honeypot: {
     startTime: Date.now()
-  },
-  init() {
-    console.log(this.recapatcha);
   },
   toFastSubmit() {
     return Math.round(
@@ -22,23 +19,23 @@ const s = ({ recapatcha: o, initialData: i = {} }) => ({
       this.isLoading = !0;
       try {
         await this.submit();
-      } catch (a) {
-        this.handleError(a);
+      } catch (i) {
+        this.handleError(i);
       } finally {
         this.isLoading = !1;
       }
     }
   },
   async submit() {
-    if (this.$dispatch("beforesubmit"), this.recapatcha && window.grecaptcha) {
-      const t = await window.grecaptcha.execute(this.recapatcha, {
+    if (this.$dispatch("beforesubmit"), this.recaptcha && window.grecaptcha) {
+      const t = await window.grecaptcha.execute(this.recaptcha, {
         action: "form"
       });
       this.formData.gRecaptchaResponse = t;
     }
-    const a = this.$el.action, e = this.$el.method;
-    this.formData.submitted_from = window.location.href, await fetch(a, {
-      method: e,
+    const i = this.$el.action, o = this.$el.method;
+    this.formData.submitted_from = window.location.href, await fetch(i, {
+      method: o,
       headers: {
         "Content-Type": "application/json"
       },
@@ -53,11 +50,11 @@ const s = ({ recapatcha: o, initialData: i = {} }) => ({
       this.handleError(t);
     });
   },
-  handleError(a) {
-    this.$dispatch("error", a);
+  handleError(i) {
+    this.$dispatch("error", i);
   },
   clearForm() {
-    this.formData = { ...i };
+    this.formData = { ...a };
   }
 });
 document.addEventListener("alpine:init", () => {

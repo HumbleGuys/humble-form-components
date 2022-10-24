@@ -1,5 +1,5 @@
-const form = ({ recapatcha, initialData = {} }) => ({
-    recapatcha: recapatcha,
+const form = ({ recaptcha, initialData = {} }) => ({
+    recaptcha: recaptcha,
 
     formData: { ...initialData },
 
@@ -7,10 +7,6 @@ const form = ({ recapatcha, initialData = {} }) => ({
 
     honeypot: {
         startTime: Date.now(),
-    },
-
-    init() {
-        console.log(this.recapatcha);
     },
 
     toFastSubmit() {
@@ -45,8 +41,8 @@ const form = ({ recapatcha, initialData = {} }) => ({
     async submit() {
         this.$dispatch("beforesubmit");
 
-        if (this.recapatcha && window.grecaptcha) {
-            const token = await window.grecaptcha.execute(this.recapatcha, {
+        if (this.recaptcha && window.grecaptcha) {
+            const token = await window.grecaptcha.execute(this.recaptcha, {
                 action: "form",
             });
 
