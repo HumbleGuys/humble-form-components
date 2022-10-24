@@ -2,11 +2,13 @@
     'name',
     'action',
     'method' => 'POST',
-    'initialData' => []
+    'initialData' => [],
+    'recapatcha' => null
 ])
 
 <form
     x-data="form({
+        recapatcha: {{ json_encode($recapatcha) }},
         initialData: {{ json_encode($initialData) }}
     })"
     name="{{ $name }}"
@@ -20,7 +22,11 @@
 
 @once
     @push('head')
-        <link rel="stylesheet" href="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/style.css?v=0.0.8') }}">
-        <script module defer src="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/humble-form-components.umd.js?v=0.0.8') }}"></script>
-    @endpush   
+        <link rel="stylesheet" href="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/style.css?v=0.0.9') }}">
+        <script module defer src="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/humble-form-components.umd.js?v=0.0.9') }}"></script>
+    
+        @if (!empty($recapatcha))
+            <script src="https://www.google.com/recaptcha/api.js?render={{ $recapatcha }}"></script>
+        @endif
+    @endpush
 @endonce 

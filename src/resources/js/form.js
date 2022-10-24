@@ -1,10 +1,16 @@
-const form = ({ initialData = {} }) => ({
+const form = ({ recapatcha, initialData = {} }) => ({
+    recapatcha: recapatcha,
+
     formData: { ...initialData },
 
     isLoading: false,
 
     honeypot: {
         startTime: Date.now(),
+    },
+
+    init() {
+        console.log(this.recapatcha);
     },
 
     toFastSubmit() {
@@ -38,6 +44,14 @@ const form = ({ initialData = {} }) => ({
 
     async submit() {
         this.$dispatch("beforesubmit");
+
+        if (this.recapatcha && window.grecaptcha) {
+            const token = await window.grecaptcha.execute(this.recapatcha, {
+                action: "form",
+            });
+
+            this.formData.gRecaptchaResponse = token;
+        }
 
         const url = this.$el.action;
         const method = this.$el.method;

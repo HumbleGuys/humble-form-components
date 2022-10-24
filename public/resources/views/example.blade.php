@@ -234,6 +234,7 @@
         <x-form::base
             name="example-form2"
             action="https://jsonplaceholder.typicode.com/posts!!!"
+            recapatcha="test"
             @beforeSubmit="function () {
                 formData.new_value = 'test';
             }"
