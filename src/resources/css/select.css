@@ -27,3 +27,7 @@
 .select[disabled] + .select__chevron {
     opacity: var(--inputDisabledOpacity);
 }
+
+.select option {
+    color: var(--selectOptionColor);
+}

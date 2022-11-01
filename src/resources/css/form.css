@@ -42,6 +42,7 @@
     --checkboxLabelColor: currentColor;
 
     --submitLoaderSize: 1.5em;
+    --selectOptionColor: #3a3a3a;
 }
 
 .form__elementHolder {
