@@ -1,5 +1,6 @@
 .select {
     cursor: pointer;
+    -webkit-appearance: none;
     appearance: none;
 }
 
