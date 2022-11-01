@@ -1,5 +1,6 @@
 .input[type=date] {
     appearance: none;
+    display: flex;
 }
 
 .input[type=date]::-webkit-calendar-picker-indicator {
@@ -11,6 +12,10 @@
     padding: 0;
     opacity: 0;
     cursor: pointer;
+}
+
+.input[type=date]::-webkit-datetime-edit {
+    text-align: left !important;
 }
 
 .input__icon {
