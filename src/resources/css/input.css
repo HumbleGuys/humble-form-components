@@ -14,7 +14,8 @@
     cursor: pointer;
 }
 
-.input[type=date]::-webkit-datetime-edit {
+.input[type=date]::-webkit-datetime-edit,
+.input[type=date]::-webkit-date-and-time-value {
     text-align: left !important;
 }
 
