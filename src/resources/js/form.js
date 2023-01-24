@@ -80,7 +80,7 @@ const form = ({ recaptcha, initialData = {} }) => ({
     },
 
     handleError(error) {
-        this.$dispatch("error", error);
+        this.$dispatch("handleError", error);
     },
 
     clearForm() {

@@ -1,6 +1,6 @@
-const s = ({ recaptcha: e, initialData: a = {} }) => ({
+const s = ({ recaptcha: e, initialData: i = {} }) => ({
   recaptcha: e,
-  formData: { ...a },
+  formData: { ...i },
   isLoading: !1,
   honeypot: {
     startTime: Date.now()
@@ -19,8 +19,8 @@ const s = ({ recaptcha: e, initialData: a = {} }) => ({
       this.isLoading = !0;
       try {
         await this.submit();
-      } catch (i) {
-        this.handleError(i);
+      } catch (a) {
+        this.handleError(a);
       } finally {
         this.isLoading = !1;
       }
@@ -33,8 +33,8 @@ const s = ({ recaptcha: e, initialData: a = {} }) => ({
       });
       this.formData.gRecaptchaResponse = t;
     }
-    const i = this.$el.action, o = this.$el.method;
-    this.formData.submitted_from = window.location.href, await fetch(i, {
+    const a = this.$el.action, o = this.$el.method;
+    this.formData.submitted_from = window.location.href, await fetch(a, {
       method: o,
       headers: {
         "Content-Type": "application/json"
@@ -50,11 +50,11 @@ const s = ({ recaptcha: e, initialData: a = {} }) => ({
       this.handleError(t);
     });
   },
-  handleError(i) {
-    this.$dispatch("error", i);
+  handleError(a) {
+    this.$dispatch("handleError", a);
   },
   clearForm() {
-    this.formData = { ...a };
+    this.formData = { ...i };
   }
 });
 document.addEventListener("alpine:init", () => {

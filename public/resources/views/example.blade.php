@@ -18,7 +18,7 @@
             @success="function () {
                 console.log('success');
             }"
-            @error="function (error) {
+            @handleError="function (error) {
                 console.log(error);
             }"
         >
@@ -241,7 +241,7 @@
             @success="function () {
                 console.log('success');
             }"
-            @error="function (error) {
+            @handleError="function (error) {
                 console.log('error');
             }"
         >
