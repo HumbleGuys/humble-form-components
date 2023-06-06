@@ -19,7 +19,7 @@ const form = ({ recaptcha, initialData = {} }) => ({
 
     async handleSubmit() {
         if (this.toFastSubmit()) {
-            window.location.href = "https://www.google.se/";
+            window.location.href = 'https://www.google.se/';
             return;
         }
 
@@ -39,11 +39,11 @@ const form = ({ recaptcha, initialData = {} }) => ({
     },
 
     async submit() {
-        this.$dispatch("beforesubmit");
+        this.$dispatch('beforesubmit');
 
         if (this.recaptcha && window.grecaptcha) {
             const token = await window.grecaptcha.execute(this.recaptcha, {
-                action: "form",
+                action: 'form',
             });
 
             this.formData.gRecaptchaResponse = token;
@@ -57,7 +57,7 @@ const form = ({ recaptcha, initialData = {} }) => ({
         await fetch(url, {
             method: method,
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(this.formData),
         })
@@ -70,7 +70,7 @@ const form = ({ recaptcha, initialData = {} }) => ({
             })
             .then((response) => response.json())
             .then((data) => {
-                this.$dispatch("success", data);
+                this.$dispatch('success', data);
 
                 this.clearForm();
             })
@@ -80,7 +80,7 @@ const form = ({ recaptcha, initialData = {} }) => ({
     },
 
     handleError(error) {
-        this.$dispatch("handleError", error);
+        this.$dispatch('failed', error);
     },
 
     clearForm() {
@@ -88,6 +88,6 @@ const form = ({ recaptcha, initialData = {} }) => ({
     },
 });
 
-document.addEventListener("alpine:init", () => {
-    window.Alpine.data("form", form);
+document.addEventListener('alpine:init', () => {
+    window.Alpine.data('form', form);
 });
