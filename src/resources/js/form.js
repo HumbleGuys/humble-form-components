@@ -1,7 +1,9 @@
-const form = ({ recaptcha, initialData = {} }) => ({
+const form = ({ recaptcha, initialData = {}, useFormData = false }) => ({
     recaptcha: recaptcha,
 
     formData: { ...initialData },
+
+    useFormData: useFormData,
 
     isLoading: false,
 
@@ -57,9 +59,11 @@ const form = ({ recaptcha, initialData = {} }) => ({
         await fetch(url, {
             method: method,
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': this.useFormData
+                    ? 'multipart/form-data'
+                    : 'application/json',
             },
-            body: JSON.stringify(this.formData),
+            body: this.getSubmitData(),
         })
             .then((response) => {
                 if (!response.ok) {
@@ -77,6 +81,24 @@ const form = ({ recaptcha, initialData = {} }) => ({
             .catch((error) => {
                 this.handleError(error);
             });
+    },
+
+    getSubmitData() {
+        if (!this.useFormData) {
+            return JSON.stringify(this.formData);
+        }
+
+        const formData = new FormData();
+
+        for (const key in this.formData) {
+            if (this.formData[key]) {
+                const data = this.formData[key];
+
+                formData.append(key, data);
+            }
+        }
+
+        return formData;
     },
 
     handleError(error) {
