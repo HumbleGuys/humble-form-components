@@ -1,6 +1,7 @@
-const s = ({ recaptcha: e, initialData: a = {} }) => ({
-  recaptcha: e,
-  formData: { ...a },
+const r = ({ recaptcha: s, initialData: o = {}, useFormData: e = !1 }) => ({
+  recaptcha: s,
+  formData: { ...o },
+  useFormData: e,
   isLoading: !1,
   honeypot: {
     startTime: Date.now()
@@ -19,8 +20,8 @@ const s = ({ recaptcha: e, initialData: a = {} }) => ({
       this.isLoading = !0;
       try {
         await this.submit();
-      } catch (i) {
-        this.handleError(i);
+      } catch (a) {
+        this.handleError(a);
       } finally {
         this.isLoading = !1;
       }
@@ -33,13 +34,13 @@ const s = ({ recaptcha: e, initialData: a = {} }) => ({
       });
       this.formData.gRecaptchaResponse = t;
     }
-    const i = this.$el.action, o = this.$el.method;
-    this.formData.submitted_from = window.location.href, await fetch(i, {
-      method: o,
+    const a = this.$el.action, i = this.$el.method;
+    this.formData.submitted_from = window.location.href, await fetch(a, {
+      method: i,
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": this.useFormData ? "multipart/form-data" : "application/json"
       },
-      body: JSON.stringify(this.formData)
+      body: this.getSubmitData()
     }).then((t) => {
       if (!t.ok)
         throw new Error(`Error! status: ${t.status}`);
@@ -50,13 +51,24 @@ const s = ({ recaptcha: e, initialData: a = {} }) => ({
       this.handleError(t);
     });
   },
-  handleError(i) {
-    this.$dispatch("failed", i);
+  getSubmitData() {
+    if (!this.useFormData)
+      return JSON.stringify(this.formData);
+    const a = new FormData();
+    for (const i in this.formData)
+      if (this.formData[i]) {
+        const t = this.formData[i];
+        a.append(i, t);
+      }
+    return a;
+  },
+  handleError(a) {
+    this.$dispatch("failed", a);
   },
   clearForm() {
-    this.formData = { ...a };
+    this.formData = { ...o };
   }
 });
 document.addEventListener("alpine:init", () => {
-  window.Alpine.data("form", s);
+  window.Alpine.data("form", r);
 });
