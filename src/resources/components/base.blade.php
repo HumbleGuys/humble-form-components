@@ -1,9 +1,10 @@
-@props(['name', 'action', 'method' => 'POST', 'initialData' => [], 'recaptcha' => null])
+@props(['name', 'action', 'method' => 'POST', 'initialData' => [], 'recaptcha' => null, 'useFormData' => false])
 
 <form
     x-data="form({
         recaptcha: {{ json_encode($recaptcha) }},
-        initialData: {{ json_encode($initialData) }}
+        initialData: {{ json_encode($initialData) }},
+        useFormData: {{ json_encode($useFormData) }}
     })"
     name="{{ $name }}"
     action="{{ $action }}"
