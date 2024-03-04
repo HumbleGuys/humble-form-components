@@ -1,7 +1,7 @@
-const r = ({ recaptcha: s, initialData: o = {}, useFormData: e = !1 }) => ({
+const r = ({ recaptcha: s, initialData: i = {}, useFormData: o = !1 }) => ({
   recaptcha: s,
-  formData: { ...o },
-  useFormData: e,
+  formData: { ...i },
+  useFormData: o,
   isLoading: !1,
   honeypot: {
     startTime: Date.now()
@@ -34,12 +34,10 @@ const r = ({ recaptcha: s, initialData: o = {}, useFormData: e = !1 }) => ({
       });
       this.formData.gRecaptchaResponse = t;
     }
-    const a = this.$el.action, i = this.$el.method;
+    const a = this.$el.action, e = this.$el.method;
     this.formData.submitted_from = window.location.href, await fetch(a, {
-      method: i,
-      headers: {
-        "Content-Type": this.useFormData ? "multipart/form-data" : "application/json"
-      },
+      method: e,
+      headers: this.getHeaders(),
       body: this.getSubmitData()
     }).then((t) => {
       if (!t.ok)
@@ -51,14 +49,20 @@ const r = ({ recaptcha: s, initialData: o = {}, useFormData: e = !1 }) => ({
       this.handleError(t);
     });
   },
+  getHeaders() {
+    if (!this.useFormData)
+      return {
+        "Content-Type": "application/json"
+      };
+  },
   getSubmitData() {
     if (!this.useFormData)
       return JSON.stringify(this.formData);
     const a = new FormData();
-    for (const i in this.formData)
-      if (this.formData[i]) {
-        const t = this.formData[i];
-        a.append(i, t);
+    for (const e in this.formData)
+      if (this.formData[e]) {
+        const t = this.formData[e];
+        a.append(e, t);
       }
     return a;
   },
@@ -66,7 +70,7 @@ const r = ({ recaptcha: s, initialData: o = {}, useFormData: e = !1 }) => ({
     this.$dispatch("failed", a);
   },
   clearForm() {
-    this.formData = { ...o };
+    this.formData = { ...i };
   }
 });
 document.addEventListener("alpine:init", () => {

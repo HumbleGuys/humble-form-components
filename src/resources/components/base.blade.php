@@ -19,12 +19,12 @@
     @push('head')
         <link
             rel="stylesheet"
-            href="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/style.css?v=0.3.0') }}"
+            href="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/style.css?v=0.3.1') }}"
         >
         <script
             module
             defer
-            src="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/humble-form-components.umd.js?v=0.3.0') }}"
+            src="{{ asset('../vendor/humble-guys/humble-form-components/public/resources/dist/humble-form-components.umd.js?v=0.3.1') }}"
         ></script>
 
         @if (!empty($recaptcha))
