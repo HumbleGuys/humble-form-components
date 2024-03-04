@@ -58,11 +58,7 @@ const form = ({ recaptcha, initialData = {}, useFormData = false }) => ({
 
         await fetch(url, {
             method: method,
-            headers: {
-                'Content-Type': this.useFormData
-                    ? 'multipart/form-data'
-                    : 'application/json',
-            },
+            headers: this.getHeaders(),
             body: this.getSubmitData(),
         })
             .then((response) => {
@@ -81,6 +77,16 @@ const form = ({ recaptcha, initialData = {}, useFormData = false }) => ({
             .catch((error) => {
                 this.handleError(error);
             });
+    },
+
+    getHeaders() {
+        if (this.useFormData) {
+            return;
+        }
+
+        return {
+            'Content-Type': 'application/json',
+        };
     },
 
     getSubmitData() {
